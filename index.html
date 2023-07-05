@@ -1,1 +1,171 @@
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Git Documentation</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Git Documentation</header>
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#Getting_Started_With_Git">
+        Getting Started With Git
+      </a>
+      <a class="nav-link" href="#Staging_Environment">
+        Staging Environment
+      </a>
+      <a class="nav-link" href="#Branches">Branches</a>
+      <a class="nav-link" href="#Pulling/Pushing_to_GitHub">
+        Pulling/Pushing to GitHub
+      </a>
+      <a class="nav-link" href="#Help!_Git_Restore/Reset/Revert">
+        Help! Git Restore/Reset/Revert
+      </a>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>Git is a popular <strong>version control</strong> 
+        system. It is used for tracking code changes, tracking who made those changes,
+         and allowing coding collaboration.</p>
+        <p>What you can do with Git:
+          <ul>
+            <li>Manage project with <strong>Repositories</strong></li>
+            <li><strong>Clone</strong> a project to work on a local copy</li>
+            <li>Control and track changes with <strong>Staging</strong> and 
+              <strong> Commiting</strong>
+            </li>
+            <li><strong>Branch and Merge</strong> to allow for work on
+              different parts and versions of a project
+            </li>
+            <li><strong>Pull</strong> the latest version of the project
+              to a local copy
+            </li>
+            <li><strong>Push</strong> local updates to the main project</li>
+          </ul>
+        </p>
+      </section>
+      <hr>
+      <section class="main-section" id="Getting_Started_With_Git">
+        <header>Getting Started With Git</header>
+        <h2>Configure Git</h2>
+        <p>Let Git know who you are by entering a username and email. 
+          This will be helpful when viewing version history.
+        </p>
+        <img src="">
+        <h2>Initialize Git</h2>
+        <p>Once you have created a folder for your project and navigated
+          to it, initialize Git on that folder with <code>git init</code>
+        </p>
+        <h2>Clone a GitHub Repo</h2>
+        <p>Navigate to your desired directory in your terminal and type:
+          <code>git clone git@github.com:&lttagName>/&ltrepoName>.git</code>
+        </p>
+      </section>
+      <hr>
+      <section class="main-section" id="Staging_Environment">
+        <header>Staging Environment</header>
+        <h2>Git Status</h2>
+        <p>Once you start editing and adding files to your project, 
+          you can check on the Git status to see if it is part of our repo
+        </p>
+        <p>Files in the Git repo folder can be in one of 2 states:
+          <ol>
+            <li>Tracked: files that Git knows about and are added to the repo</li>
+            <li>Untracked: files that are in your working directory, but not
+              yet added to the repo</li>
+          </ol>
+        </p>
+        <p>Check the Git status with <code>git status</code></p>
+        <h2>Staging Files</h2>
+        <p>Stages files are files that are ready to be committed to the 
+          repository you are working on</p>
+        <p>Add a file to the Staging Environment with <code>
+            git add &ltfileName></code>
+          <ul>
+            <li>Shortcut: use <code>git add .</code> to stage all changes</li>
+          </ul>
+        </p>
+        <h2>Git Commits</h2>
+        <p>Adding commits keep track of our progress and changes
+           as we work. Git considers each commit change point or 
+           "save point". It is a point in the project you can go 
+           back to if you find a bug, or want to make a change.
+        </p>
+        <p>To add a commit with a message, do <code>git commit -m "&ltmessage>"</code>
+        </p>
+        <div class="icon">
+        <img class="lightbulb" src="https://cdn-icons-png.flaticon.com/128/3625/3625060.png">
+        <p>Tip: You can view the history of commits for a repository
+          with <code>git log --oneline</code>
+        </p>
+        </div>
+      </section>
+      <hr>
+      <section class="main-section" id="Branches">
+        <header>Branches</header>
+        <p>A branch is a new/separate version of the main repository</p>
+        <h2>Create a New Branch</h2>
+        <code>git checkout -b &ltnameOfBranch></code>
+        <h2>Moving Between Branches</h2>
+        <code>git checkout &ltnameOfBranch></code><br>
+        <div class="icon needs-padding">
+          <img class="lightbulb" src="https://cdn-icons-png.flaticon.com/128/3625/3625060.png">
+          <p>Tip: the shortcut <code>git co -b &ltnameOfBranch></code> creates a branch and moves to it
+          </p>
+        </div>
+        <h2>Merge Branches</h2>
+        <code>git merge &ltbranchName></code>
+        <h2>Delete Branches</h2>
+        <code>git branch -d &ltbranchName></code>
+      </section>
+      <hr>
+      <section class="main-section" id="Pulling/Pushing_to_GitHub">
+        <header>Pulling/Pushing to GitHub</header>
+        <p>Run <code>git fetch</code> and <code>git pull</code>
+          every time you enter into your project 
+          to get the most up to date version from dev
+        </p>
+        <div class="icon">
+          <img class="lightbulb" src="https://cdn-icons-png.flaticon.com/128/3625/3625060.png">
+          <p>Tip: If you have been working on a branch for more than a day,
+           run <code>git merge dev</code> on your working branch before 
+           you raise a PR. Adjust any merge conflicts as needed.
+          </p>
+        </div>
+        <p>Use <code>git push</code> to push your changes to your branch
+          after you have commited them
+        </p>
+      </section>
+      <hr>
+      <section class="main-section" id="Help!_Git_Restore/Reset/Revert">
+        <header>Help! Git Restore/Reset/Revert</header>
+        <h2>Git Restore</h2>
+        <blockquote>Restore is about restoring files in the working tree
+           from either the index or another commit. This command 
+           does not update your branch. The command can also be used 
+           to restore files in the index from another commit.
+        </blockquote>
+        <p> Use <code>git restore --staged &ltfile></code> to 
+          remove accidentally staged files.
+        </p>
+        <h2>Git Reset</h2>
+        <blockquote>Reset is about updating your branch, moving 
+          the tip in order to add or remove commits from the 
+          branch. This operation changes the commit history.
+        </blockquote>
+        <p> Use <code>git reset #commitHash</code> to remove commits
+          from a branch.
+        </p>
+        <h2>Git Revert</h2>
+        <blockquote>Revert is about making a new commit that 
+          reverts the changes made by other commits.
+        </blockquote>
+        <p>Use <code>git revert</code></p>
+      </section>
+    </main>
+    <div class="extra-space"></div>
+  </body>
+</html>
