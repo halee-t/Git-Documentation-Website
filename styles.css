@@ -1,1 +1,118 @@
+:root {
+  --green: rgba(149, 213, 149, 0.675);
+  --gray: rgba(227, 225, 225, 0.88);
+}
 
+* {
+  margin: 0;
+}
+
+/* NAVIGATION BAR */
+nav {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: 3px solid;
+    border-color: var(--green);
+    background-color: var(--gray);
+    z-index: 1;
+}
+
+nav > header {
+  padding: 20px;
+  font-size: 2rem;
+}
+
+nav > a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  border-top: 1px solid black;
+  font-size: 1.2rem;
+}
+
+nav > a:hover {
+  background-color: var(--green);
+  font-weight: bold;
+}
+
+/*figure out how to get it to stay green if you're
+on that section*/
+
+/* MAIN PAGE */
+#main-doc {
+  position: absolute;
+  margin-left: 303px;
+  width: 100%;
+  padding: 50px;
+  background-color: rgb(249, 247, 247);
+  z-index: -1;
+}
+
+main > section > header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p, ul, ol {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 20px 0 10px 0;
+}
+
+code {
+  background-color: var(--gray);
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 1rem;
+}
+
+.lightbulb {
+  margin: 0px 10px 0 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  border-left: 3px solid var(--green);
+  padding: 10px;
+  font-style: italic;
+}
+
+.needs-padding {
+  margin-top: 10px;
+}
+
+hr {
+  margin: 40px auto;
+}
+
+@media (min-width: 1800px) {
+  .extra-space {
+    width: 300px;
+    height: 100%;
+    background-color: var(--gray);
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-left: 3px solid var(--green);
+  }
+
+  #main-doc {
+    width: 1204px;
+  }
+}
